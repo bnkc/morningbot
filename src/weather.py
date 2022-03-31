@@ -46,8 +46,3 @@ class CurrentWeather(Weather):
                 raise Exception(f"Error: {key} is None")
 
         return result
-
-
-if __name__ == "__main__":
-    weather = CurrentWeather()
-    print(weather.current(weather.get_weather_data))
