@@ -48,6 +48,6 @@ class CurrentWeather(Weather):
         return result
 
 
-# if __name__ == "__main__":
-#     weather = CurrentWeather()
-#     print(weather.current(weather.get_weather_data))
+if __name__ == "__main__":
+    weather = CurrentWeather()
+    print(weather.current(weather.get_weather_data))

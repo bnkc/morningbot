@@ -1,1 +1,1 @@
-from .core import Message
+# from .core import Message
