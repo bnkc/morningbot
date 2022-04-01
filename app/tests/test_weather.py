@@ -1,8 +1,9 @@
 import pytest
-import src
-from src import Weather, CurrentWeather
+
+from app.weather import CurrentWeather
+from app.schemas import WeatherData
+
 from typing import Optional
-from schemas import WeatherData
 
 
 def test_current():

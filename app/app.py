@@ -1,8 +1,9 @@
-# Download the helper library from https://www.twilio.com/docs/python/install
 import os
 from twilio.rest import Client
 from dotenv import load_dotenv
-from crud import Message
+
+from app.crud import Message
+
 
 load_dotenv()
 
@@ -13,9 +14,14 @@ auth_token = os.getenv("TWILIO_AUTH_TOKEN")
 client = Client(account_sid, auth_token)
 
 message = client.messages.create(
-    body=Message().create_message(),
+    body=Message.from_current().create_message(),
     from_=twilio_number,
     to=sender,
 )
 
 print(message.sid)
+
+
+# import sys
+
+# print(sys.path[0])

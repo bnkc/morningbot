@@ -3,15 +3,15 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-import docs
+from app.docs import WeatherApi
 
 
 class Weather:
     def __init__(self, metric_temp=None, metric_wind=None, metric_rain=None):
-        self.manager = OWM(docs.WX_API_KEY).weather_manager()
-        self.default_location = docs.WX_LOCATION
-        self.metric_temp = metric_temp or docs.WX_METRIC_TEMP
-        self.metric_wind = metric_wind or docs.WX_METRIC_WIND
+        self.manager = OWM(WeatherApi.WX_API_KEY).weather_manager()
+        self.default_location = WeatherApi.WX_LOCATION
+        self.metric_temp = metric_temp or WeatherApi.WX_METRIC_TEMP
+        self.metric_wind = metric_wind or WeatherApi.WX_METRIC_WIND
 
     def get_weather_data(self, weather) -> dict:
         return {
@@ -46,8 +46,3 @@ class CurrentWeather(Weather):
                 raise Exception(f"Error: {key} is None")
 
         return result
-
-
-if __name__ == "__main__":
-    weather = CurrentWeather()
-    print(weather.current(weather.get_weather_data))
