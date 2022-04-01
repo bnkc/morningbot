@@ -14,6 +14,3 @@ def format_data() -> dict:
             if val == {}:
                 data[key] = 0
     return data
-
-
-# print(format_data())

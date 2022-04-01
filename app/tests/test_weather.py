@@ -15,6 +15,7 @@ def test_current():
     assert isinstance(weather.current(WeatherData.default_data)["rain"], Optional[dict])
     assert isinstance(weather.current(WeatherData.default_data)["snow"], Optional[dict])
     assert isinstance(weather.current(WeatherData.default_data)["location"], str)
+    assert isinstance(weather.current(WeatherData.default_data)["detailed_status"], str)
 
 
 def test_current_raises_exception():

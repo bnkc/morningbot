@@ -7,7 +7,7 @@ from app.docs import WeatherApi
 
 
 class Weather:
-    def __init__(self, metric_temp=None, metric_wind=None, metric_rain=None):
+    def __init__(self, metric_temp=None, metric_wind=None) -> None:
         self.manager = OWM(WeatherApi.WX_API_KEY).weather_manager()
         self.default_location = WeatherApi.WX_LOCATION
         self.metric_temp = metric_temp or WeatherApi.WX_METRIC_TEMP
@@ -21,6 +21,7 @@ class Weather:
             "wind": weather.wind(self.metric_wind)["speed"],
             "rain": weather.rain,
             "snow": weather.snow,
+            "detailed_status": weather.detailed_status,
         }
 
 
@@ -35,7 +36,6 @@ class CurrentWeather(Weather):
         """
         observation = self.manager.weather_at_place(location or self.default_location)
         weather = observation.weather
-
         result = get_data(weather)
         result[
             "location"
@@ -46,3 +46,8 @@ class CurrentWeather(Weather):
                 raise Exception(f"Error: {key} is None")
 
         return result
+
+
+# if __name__ == "__main__":
+#     weather = CurrentWeather()
+#     print(weather.current(weather.get_weather_data))

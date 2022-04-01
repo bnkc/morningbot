@@ -20,4 +20,6 @@ class WeatherData:
             "wind": 10.3570322,
             "rain": {},
             "snow": {},
+            "location": "London, GB",
+            "detailed_status": "Clear sky",
         }

@@ -8,4 +8,4 @@ class WeatherApi:
     WX_LOCATION = geocoder.ip("me").city
     WX_METRIC_TEMP = os.environ.get("WX_METRIC_TEMP", "fahrenheit")
     WX_METRIC_WIND = os.environ.get("WX_METRIC_WIND", "miles_hour")
-    WX_METRIC_RAIN = os.environ.get("WX_FEELS_LIKE", "fahrenheit")
+    WX_UV_INDEX = os.environ.get("WX_UV_INDEX", "fahrenheit")

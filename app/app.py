@@ -2,8 +2,7 @@ import os
 from twilio.rest import Client
 from dotenv import load_dotenv
 
-from app.crud import Message
-
+from app.crud import Message, format_data
 
 load_dotenv()
 
@@ -20,8 +19,3 @@ message = client.messages.create(
 )
 
 print(message.sid)
-
-
-# import sys
-
-# print(sys.path[0])
