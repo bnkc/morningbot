@@ -1,1 +1,1 @@
-from .weather import WeatherData
+from .weather import TestData
