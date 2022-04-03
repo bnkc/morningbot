@@ -2,7 +2,7 @@ from .helper import format_data
 
 
 class Message:
-    def __init__(self, weather):
+    def __init__(self, weather=None):
         self.data: dict = weather
         self.feels_like: float = self.data["feels like"]
         self.rain: float = self.data["rain"]
@@ -52,7 +52,7 @@ class Message:
 
     def wind_set_rules(self) -> str:
         wind = self.wind
-        if wind > 5:
+        if wind > 20:
             wind_status = "windy 💨 "
         else:
             wind_status = "calm 😌"
@@ -65,5 +65,11 @@ class Message:
         return message
 
 
-# message = Message.from_current()
-# print(message.create_message())
+# from app.schemas import TestData
+# from app.weather import CurrentWeather
+
+
+# if __name__ == "__main__":
+#     test = TestData()
+#     # print(test.default_data())
+#     print(Message.temp_set_rules(Message(test.default_data())))
