@@ -10,7 +10,4 @@ def format_data() -> dict:
     for key, val in data.items():
         if type(val) is float:
             data[key] = int(val)
-        elif type(val) is dict:
-            if val == {}:
-                data[key] = 0
     return data
