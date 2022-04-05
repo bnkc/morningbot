@@ -1,9 +1,9 @@
 from pyowm import OWM
 from dotenv import load_dotenv
 
-load_dotenv()
-
 from app.docs import WeatherApi
+
+load_dotenv()
 
 
 class Weather:
@@ -14,13 +14,12 @@ class Weather:
         self.metric_wind = metric_wind or WeatherApi.WX_METRIC_WIND
 
     def get_weather_data(self, weather) -> dict:
+        """Get weather data from OWM."""
         return {
             "max": weather.temperature(self.metric_temp)["temp_max"],
             "min": weather.temperature(self.metric_temp)["temp_min"],
             "feels like": weather.temperature(self.metric_temp)["feels_like"],
             "wind": weather.wind(self.metric_wind)["speed"],
-            "rain": weather.rain,
-            "snow": weather.snow,
             "detailed_status": weather.detailed_status,
         }
 
@@ -46,8 +45,3 @@ class CurrentWeather(Weather):
                 raise Exception(f"Error: {key} is None")
 
         return result
-
-
-# if __name__ == "__main__":
-#     weather = CurrentWeather()
-#     print(weather.current(weather.get_weather_data))
