@@ -1,14 +1,15 @@
 import os
+from typing import List
 from geotext import GeoText
 
 from .config_twilio import Twilio
 
 
-def inbound_location() -> str:
+def inbound_location(messages: List) -> str:
     """
-    Return the location of the inbound message.
+    Return the location of an inbound message.
 
-    loop through the inbound messages and return the location.
+    loop through the inbound messages and return the city name.
     If the location is not found, return set default location.
     """
 
@@ -16,16 +17,13 @@ def inbound_location() -> str:
     twilio_number = Twilio.TWILIO_NUMBER
 
     try:
-        for key, sms in enumerate(Twilio.CLIENT.messages.list()):
-            if key == 0 and sms.to == twilio_number:
+        for key, sms in enumerate(messages):
+            if sms.to == twilio_number:
                 inbound_city = GeoText(sms.body).cities[0]
                 break
             else:
                 inbound_city = default_location
-                break
-    except IndexError:
-        raise IndexError("No inbound location found in last message to Twilio.")
+
+    except TypeError:
+        raise TypeError("list was not iterable")
     return inbound_city
-
-
-print(inbound_location())
