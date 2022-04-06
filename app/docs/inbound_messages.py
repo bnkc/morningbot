@@ -17,10 +17,9 @@ def inbound_location(messages: List[Any]) -> str:
     if no location is found, default to location.
     """
 
-    default_location = os.getenv("DEFAULT_LOCATION")
     twilio_number = Twilio.TWILIO_NUMBER
     last_message = max(messages, key=lambda x: x == twilio_number)
     inbound_city = GeoText(last_message.body).cities[0]
     if inbound_city is None:
-        inbound_city = default_location
+        inbound_city = os.environ["DEFAULT_LOCATION"]
     return inbound_city

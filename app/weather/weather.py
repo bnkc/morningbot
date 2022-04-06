@@ -25,7 +25,7 @@ class Weather:
 
 
 class CurrentWeather(Weather):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
     def current(self, get_data=None, location=None) -> dict:

@@ -2,7 +2,7 @@ from .helper import format_data
 
 
 class Message:
-    def __init__(self, weather=None):
+    def __init__(self, weather=None) -> None:
         self.data: dict = weather
         self.feels_like: float = self.data["feels like"]
         self.wind: float = self.data["wind"]

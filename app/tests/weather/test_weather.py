@@ -6,7 +6,6 @@ from app.crud import format_data
 
 
 def test_current():
-    weather = CurrentWeather()
     assert isinstance(format_data()["max"], int)
     assert isinstance(format_data()["min"], int)
     assert isinstance(format_data()["feels like"], int)
