@@ -9,5 +9,11 @@
 
 ## What is it?
 
-I live in Ohio, which basically means that it might snow today, rain tomorrow, and hit 100 degree highs the following day. The weather is incredibly unpredictable, sort of like Horton Hears a Who! Because of this, checking the weather on a daily basis is a must. Sometimes I forget and step outside in shorts to quickly find myself in ankle high snow. **Morning Bot** makes sure this doesnt happen. Every morning I recieve a text from **Morning Bot** that gives cliff notes on what the weather is like. Additionally **Morning Bot** is location dependant on your phone. Yes, this means you can travel and still get weather updates on wherever you might find yourself before you even wake up.
+I live in Ohio, which basically the weather is incredibly unpredictable, sort of like Horton Hears a Who! Because of this, checking the weather on a daily basis is a must. Sometimes I forget and step outside in shorts to quickly find myself in ankle high snow. **Morning Bot** makes sure this doesnt happen. Every morning I recieve a text from **Morning Bot** that gives cliff notes on what the weather is like. Additionally **Morning Bot** is location dependant on your phone. Yes, this means you can travel and still get weather updates on wherever you might find yourself.
 
+## Main Features
+Here are just a few of the things that Morning Bot does well:
+
+  - Weather updates every morning without you clicking a button
+  - Easily configurable to recieve the morning texts at your desired time using [**Heroku**][missing-data]
+ 
