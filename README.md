@@ -15,5 +15,6 @@ I live in Ohio, which basically the weather is incredibly unpredictable, sort of
 Here are just a few of the things that Morning Bot does well:
 
   - Weather updates every morning without you clicking a button
-  - Easily configurable to recieve the morning texts at your desired time using [**Heroku**][missing-data]
+  - Easily `configurable` to recieve the morning texts at your desired time using [**Heroku Scheduler**](https://devcenter.heroku.com/articles/scheduler)
+  - 
  
