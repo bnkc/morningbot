@@ -21,5 +21,5 @@ Here are just a few of the things that **Morning Bot** does well:
   - Weather data collected from [**Open Weather**](https://openweathermap.org/), a reliable RESTful api with weather data around the world
   - Morning Bot uses [**Twilio**](https://www.twilio.com/) to be able to `send` and `recieve` messages with your **FREE** virtual number created
   - Bulk SMS capabilities. feel free to add your close ones to the callers list
-  - Overall, a badass app
+  - Most importantly, a badass app
  
