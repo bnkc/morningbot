@@ -9,7 +9,7 @@
 
 ## What is it?
 
-I live in Ohio, which means basically the weather is incredibly unpredictable, sort of like Horton Hears a Who! Because of this, checking the weather on a daily basis is a must. Sometimes I forget and step outside in shorts to quickly find myself in ankle high snow. **Morning Bot** makes sure this doesnt happen. Every morning I recieve a text from **Morning Bot** that gives cliff notes on what the weather is like. Additionally **Morning Bot** is location dependant on your phone. Yes, this means you can travel and still get weather updates on wherever you might find yourself.
+I live in Ohio, which means the weather is incredibly unpredictable, sort of like Horton Hears a Who! Because of this, checking the weather on a daily basis is a must. Sometimes I forget and step outside in shorts to quickly find myself in ankle high snow. **Morning Bot** makes sure this doesnt happen. Every morning I recieve a text from **Morning Bot** that gives cliff notes on what the weather is like. Additionally **Morning Bot** is location dependant on your phone. Yes, this means you can travel and still get weather updates on wherever you might find yourself.
 
 ## Main Features
 Here are just a few of the things that **Morning Bot** does well:
