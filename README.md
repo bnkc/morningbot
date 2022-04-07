@@ -2,6 +2,7 @@
   <a href="https://github.com/bnkc/morningbot"><img alt="Morning Bot" src="https://github.com/bnkc/morningbot/blob/master/images/logo.png" width="60%"></a>
 </p>
 
+[![PyPi Version](https://img.shields.io/pypi/v/deadlink.svg?style=flat-square)](https://pypi.org/project/deadlink/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 [![gh-actions](https://img.shields.io/github/workflow/status/nschloe/deadlink/ci?style=flat-square)](https://github.com/bnkc/morningbot/actions)
 
