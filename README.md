@@ -1,2 +1,2 @@
-![Logo](/Users/levostatnigrosh/Developer/morningbot/images/logo.jpg)
-here
+![Logo](/Users/levostatnigrosh/Developer/morningbot/images/logo.jpeg)
+
