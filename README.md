@@ -6,6 +6,6 @@
 
 
 
-![Logo](https://github.com/bnkc/morningbot/blob/master/images/logo.jpeg)
+![Logo](https://github.com/bnkc/morningbot/blob/master/images/logo.jpg)
 
 
