@@ -18,7 +18,7 @@ Here are just a few of the things that **Morning Bot** does well:
 - Easily `configurable` to receive the morning texts at your desired time using [**Heroku Scheduler**](https://devcenter.heroku.com/articles/scheduler)
 - Tethered to your phone. Feel free to travel and still get those weather updates as you go. Accomplished using [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334). You may also set a `default` location if you wish to not share your location.
 - Deployed on [**Heroku**](https://dashboard.heroku.com/apps). You don't need to run this locally
-- Weather data collected from [**Open Weather**](https://openweathermap.org/), a reliable RESTful api with weather data around the world
+- Weather data collected from [**Open Weather**](https://openweathermap.org/), a reliable RESTful API
 - Morning Bot uses [**Twilio**](https://www.twilio.com/) to be able to `send` and `receive` messages with your **FREE** virtual number created
 - Bulk SMS capabilities. feel free to add your close ones to the callers list
 - Most importantly, a badass app
