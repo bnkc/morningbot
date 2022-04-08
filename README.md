@@ -23,3 +23,10 @@ Here are just a few of the things that **Morning Bot** does well:
 - Bulk SMS capabilities. feel free to add your close ones to the callers list
 - Most importantly, a badass app
  
+## Configuration
+
+* [Overview/Folder Structure](#basic-understanding-of-the-data)  
+* [Cloning Repo and Installing Dependencies](#data-cleaning)
+* [Setting Up Twilio](#removing-outliers)
+* [Setting Up Shortcuts](#life-expectancy-analysis)
+* [Hosting on Heroku/Scheduler](#life-expectancy-analysis)
