@@ -14,7 +14,7 @@ I live in Ohio, which means the weather is incredibly unpredictable, sort of lik
 ## Main Features
 Here are just a few of the things that **Morning Bot** does well:
 
-- Weather updates every morning without you clicking a button
+- Hands-off weather updates every morning
 - Easily `configurable` to receive the morning texts at your desired time using [**Heroku Scheduler**](https://devcenter.heroku.com/articles/scheduler)
 - Tethered to your phone. Feel free to travel and still get those weather updates as you go. Accomplished using [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334). You may also set a `default` location if you wish to not share your location.
 - Deployed on [**Heroku**](https://dashboard.heroku.com/apps). You don't need to run this locally
