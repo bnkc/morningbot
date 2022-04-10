@@ -25,7 +25,7 @@ Here are just a few of the things that **Morning Bot** does well:
  
 ## Configuration
 
-* [Folder Structure/Requirements](#folder-structure-requirements)  
+* [Folder Structure/Requirements](#folder-structure/Requirements)  
 * [Cloning and Installing Dependencies](#cloning-and-installing-dependencies)
 * [Setting Up Twilio](#removing-outliers)
 * [Setting Up Shortcuts](#life-expectancy-analysis)
