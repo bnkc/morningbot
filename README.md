@@ -36,6 +36,7 @@ Here are just a few of the things that **Morning Bot** does well:
 - Python `3.9.1` or above
 - Linux/MacOS *(Not tested on windows)*
 
+Folder Structure:
 ```
 morningbot
 ├── app
@@ -101,6 +102,6 @@ WX_API_KEY=<openweather key>
 TWILIO_NOTIFY_SERVICE_SID=<notify service sid>
 DEFAULT_LOCATION=<your default location>
 ```
-
+Don't worry about the keys yet, we will set those up as we go.
 
 
