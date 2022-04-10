@@ -88,7 +88,9 @@ From `./morningbot/`, install the dependecies with:
 ```console
 $ pip install -r requirements.txt
 ```
+Create a virtual environment from the `requirements.txt` *(or installed globally)*.
 
+You will need to create a `.env` in the the path `./morningbot/app/` for the os environment variables. It should look something like this:
 
 
 
