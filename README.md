@@ -92,7 +92,7 @@ Create a virtual environment from the `requirements.txt` *(or installed globally
 
 You will need to create a `.env` in the the path `./morningbot/app/` for the os environment variables. It should look something like this:
 
-```console
+```
 TWILIO_ACCOUNT_SID=<account sid>
 TWILIO_AUTH_TOKEN=<auth token>
 TWILIO_NUMBER=<twilio virtual number>
