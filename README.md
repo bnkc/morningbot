@@ -35,7 +35,6 @@ Here are just a few of the things that **Morning Bot** does well:
 
 ```
 morningbot
-├── README.md
 ├── app
 │   ├── app.py
 │   ├── crud
@@ -65,6 +64,7 @@ morningbot
 │       └── weather.py
 ├── images
 │   └── logo.png
+├── README.md
 ├── requirements.txt
 └── runtime.txt
 ```
