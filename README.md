@@ -78,7 +78,7 @@ The source code is currently hosted on GitHub at:
 https://github.com/bnkc/morningbot
 
 To get started, mkdir and cd into where Morning Bot will be stored.
-Run ```git clone https://github.com/bnkc/morningbot.git ```
+Run ```git clone https://github.com/bnkc/morningbot.git ```. 
 From `./morningbot/`, install the dependecies with:
 
 ```console
