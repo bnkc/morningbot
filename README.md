@@ -15,7 +15,7 @@ I live in Ohio, which means the weather is incredibly unpredictable, sort of lik
 Here are just a few of the things that **Morning Bot** does well:
 
 - Hands-off weather updates every morning
-- Easily `configurable` to receive the morning texts at your desired time using [**Heroku Scheduler**](https://devcenter.heroku.com/articles/scheduler)
+- Easily `configurable` to receive weather updates at your desired time using [**Heroku Scheduler**](https://devcenter.heroku.com/articles/scheduler)
 - Tethered to your phone. Feel free to travel and still get those weather updates as you go. Accomplished using [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334). You may also set a `default` location if you wish to not share your location.
 - Deployed on [**Heroku**](https://dashboard.heroku.com/apps). You don't need to run this locally
 - Weather data collected from [**Open Weather**](https://openweathermap.org/), a reliable RESTful API
@@ -25,8 +25,91 @@ Here are just a few of the things that **Morning Bot** does well:
  
 ## Configuration
 
-* [Overview/Folder Structure](#basic-understanding-of-the-data)  
+* [Overview/Folder Structure](#overview-and-folder-structure)  
 * [Cloning Repo and Installing Dependencies](#data-cleaning)
 * [Setting Up Twilio](#removing-outliers)
 * [Setting Up Shortcuts](#life-expectancy-analysis)
 * [Hosting on Heroku/Scheduler](#life-expectancy-analysis)
+
+## Overview and folder structure
+
+```
+morningbot
+├── README.md
+├── app
+│   ├── __pycache__
+│   │   ├── app.cpython-310.pyc
+│   │   ├── app.cpython-39.pyc
+│   │   └── run.cpython-39.pyc
+│   ├── app.py
+│   ├── crud
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-310.pyc
+│   │   │   ├── __init__.cpython-39.pyc
+│   │   │   ├── core.cpython-310.pyc
+│   │   │   ├── core.cpython-39.pyc
+│   │   │   ├── helper.cpython-310.pyc
+│   │   │   └── helper.cpython-39.pyc
+│   │   ├── core.py
+│   │   └── helper.py
+│   ├── docs
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-310.pyc
+│   │   │   ├── __init__.cpython-39.pyc
+│   │   │   ├── config.cpython-310.pyc
+│   │   │   ├── config.cpython-39.pyc
+│   │   │   ├── config_twilio.cpython-39.pyc
+│   │   │   ├── config_weather.cpython-39.pyc
+│   │   │   └── inbound_messages.cpython-39.pyc
+│   │   ├── config_twilio.py
+│   │   ├── config_weather.py
+│   │   └── inbound_messages.py
+│   ├── schemas
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-310.pyc
+│   │   │   ├── __init__.cpython-39.pyc
+│   │   │   ├── weather.cpython-310.pyc
+│   │   │   └── weather.cpython-39.pyc
+│   │   └── weather.py
+│   ├── tests
+│   │   ├── __pycache__
+│   │   │   ├── test_core.cpython-310-pytest-7.1.1.pyc
+│   │   │   └── test_weather.cpython-310-pytest-7.1.1.pyc
+│   │   ├── crud
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-39.pyc
+│   │   │   │   ├── test_core.cpython-310-pytest-7.1.1.pyc
+│   │   │   │   └── test_core.cpython-39-pytest-7.1.1.pyc
+│   │   │   └── test_core.py
+│   │   ├── docs
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-39.pyc
+│   │   │   │   └── test_inbound_messages.cpython-39-pytest-7.1.1.pyc
+│   │   │   └── test_inbound_messages.py
+│   │   └── weather
+│   │       ├── __init__.py
+│   │       ├── __pycache__
+│   │       │   ├── __init__.cpython-310.pyc
+│   │       │   ├── __init__.cpython-39.pyc
+│   │       │   ├── test_weather.cpython-310-pytest-7.1.1.pyc
+│   │       │   └── test_weather.cpython-39-pytest-7.1.1.pyc
+│   │       └── test_weather.py
+│   └── weather
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   ├── __init__.cpython-310.pyc
+│       │   ├── __init__.cpython-39.pyc
+│       │   ├── weather.cpython-310.pyc
+│       │   └── weather.cpython-39.pyc
+│       └── weather.py
+├── images
+│   └── logo.png
+├── requirements.txt
+└── runtime.txt
+```
