@@ -25,13 +25,16 @@ Here are just a few of the things that **Morning Bot** does well:
  
 ## Configuration
 
-* [Overview/Folder Structure](#overview-and-folder-structure)  
-* [Cloning Repo and Installing Dependencies](#data-cleaning)
+* [Folder Structure/Requirements](#folder-structure/requirements)  
+* [Cloning and Installing Dependencies](#cloning-and-installing-dependencies)
 * [Setting Up Twilio](#removing-outliers)
 * [Setting Up Shortcuts](#life-expectancy-analysis)
 * [Hosting on Heroku/Scheduler](#life-expectancy-analysis)
 
-## Overview and folder structure
+## Folder Structure/Requirements
+
+- Python `3.9.1` or above
+- Linux/MacOS *(Not tested on windows)*
 
 ```
 morningbot
@@ -68,3 +71,22 @@ morningbot
 ├── requirements.txt
 └── runtime.txt
 ```
+
+## Cloning and Installing Dependencies
+
+The source code is currently hosted on GitHub at:
+https://github.com/bnkc/morningbot
+
+To get started, mkdir and cd into where Morning Bot will be stored.
+Run ```git clone https://github.com/bnkc/morningbot.git ```
+From `./morningbot/`, install the dependecies with:
+
+```console
+$ pip install -r requirements.txt
+```
+
+
+
+
+
+
