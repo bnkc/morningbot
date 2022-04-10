@@ -37,76 +37,31 @@ Here are just a few of the things that **Morning Bot** does well:
 morningbot
 ├── README.md
 ├── app
-│   ├── __pycache__
-│   │   ├── app.cpython-310.pyc
-│   │   ├── app.cpython-39.pyc
-│   │   └── run.cpython-39.pyc
 │   ├── app.py
 │   ├── crud
 │   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   ├── __init__.cpython-310.pyc
-│   │   │   ├── __init__.cpython-39.pyc
-│   │   │   ├── core.cpython-310.pyc
-│   │   │   ├── core.cpython-39.pyc
-│   │   │   ├── helper.cpython-310.pyc
-│   │   │   └── helper.cpython-39.pyc
 │   │   ├── core.py
 │   │   └── helper.py
 │   ├── docs
 │   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   ├── __init__.cpython-310.pyc
-│   │   │   ├── __init__.cpython-39.pyc
-│   │   │   ├── config.cpython-310.pyc
-│   │   │   ├── config.cpython-39.pyc
-│   │   │   ├── config_twilio.cpython-39.pyc
-│   │   │   ├── config_weather.cpython-39.pyc
-│   │   │   └── inbound_messages.cpython-39.pyc
 │   │   ├── config_twilio.py
 │   │   ├── config_weather.py
 │   │   └── inbound_messages.py
 │   ├── schemas
 │   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   ├── __init__.cpython-310.pyc
-│   │   │   ├── __init__.cpython-39.pyc
-│   │   │   ├── weather.cpython-310.pyc
-│   │   │   └── weather.cpython-39.pyc
 │   │   └── weather.py
 │   ├── tests
-│   │   ├── __pycache__
-│   │   │   ├── test_core.cpython-310-pytest-7.1.1.pyc
-│   │   │   └── test_weather.cpython-310-pytest-7.1.1.pyc
 │   │   ├── crud
 │   │   │   ├── __init__.py
-│   │   │   ├── __pycache__
-│   │   │   │   ├── __init__.cpython-310.pyc
-│   │   │   │   ├── __init__.cpython-39.pyc
-│   │   │   │   ├── test_core.cpython-310-pytest-7.1.1.pyc
-│   │   │   │   └── test_core.cpython-39-pytest-7.1.1.pyc
 │   │   │   └── test_core.py
 │   │   ├── docs
 │   │   │   ├── __init__.py
-│   │   │   ├── __pycache__
-│   │   │   │   ├── __init__.cpython-39.pyc
-│   │   │   │   └── test_inbound_messages.cpython-39-pytest-7.1.1.pyc
 │   │   │   └── test_inbound_messages.py
 │   │   └── weather
 │   │       ├── __init__.py
-│   │       ├── __pycache__
-│   │       │   ├── __init__.cpython-310.pyc
-│   │       │   ├── __init__.cpython-39.pyc
-│   │       │   ├── test_weather.cpython-310-pytest-7.1.1.pyc
-│   │       │   └── test_weather.cpython-39-pytest-7.1.1.pyc
 │   │       └── test_weather.py
 │   └── weather
 │       ├── __init__.py
-│       ├── __pycache__
-│       │   ├── __init__.cpython-310.pyc
-│       │   ├── __init__.cpython-39.pyc
-│       │   ├── weather.cpython-310.pyc
-│       │   └── weather.cpython-39.pyc
 │       └── weather.py
 ├── images
 │   └── logo.png
