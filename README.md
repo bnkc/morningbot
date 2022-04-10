@@ -93,10 +93,8 @@ Create a virtual environment from the `requirements.txt` *(or installed globally
 You will need to create a `.env` in the the path `./morningbot/app/` for the os environment variables. It should look something like this:
 
 https://github.com/bnkc/morningbot/blob/master/images/config-vars.png
-<p align="center">
-  <a href="https://raw.githubusercontent.com/bnkc/morningbot/master/images/config-vars.png
-"><img alt="Morning Bot" src="https://raw.githubusercontent.com/bnkc/morningbot/master/images/config-vars.png
-" width="60%"></a>
-</p>
+![alt text](https://github.com/bnkc/morningbot/blob/master/images/config-vars.png
+)
+
 
 
