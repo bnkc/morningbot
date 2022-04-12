@@ -23,3 +23,20 @@ def inbound_location(messages: List[Any]) -> str:
     if inbound_city is None:
         inbound_city = os.environ["DEFAULT_LOCATION"]
     return inbound_city
+
+
+def coordinates(messages: List[Any]) -> str:
+    """
+    This function takes in a list of messages and returns the coordinates
+
+    :param messages: A list of messages.
+
+    :return: The coordinates of the location.
+    """
+
+    twilio_number = Twilio.TWILIO_NUMBER
+    last_message = max(messages, key=lambda x: x == twilio_number)
+
+    if inbound_city is None:
+        inbound_city = os.environ["DEFAULT_LOCATION"]
+    return inbound_city
