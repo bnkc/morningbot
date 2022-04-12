@@ -1,4 +1,6 @@
 import os
+from geopy.geocoders import Photon
+import geocoder
 from typing import Any, List
 
 from geotext import GeoText
@@ -36,7 +38,10 @@ def coordinates(messages: List[Any]) -> str:
 
     twilio_number = Twilio.TWILIO_NUMBER
     last_message = max(messages, key=lambda x: x == twilio_number)
+    coordinates = geocoder.osm(last_message.body)
+    if coordinates is None:
+        coordinates = os.environ["DEFAULT_COORDINATES"]
+    return coordinates.latlng
 
-    if inbound_city is None:
-        inbound_city = os.environ["DEFAULT_LOCATION"]
-    return inbound_city
+
+# print(coordinates(Twilio.CLIENT.messages.list()))
