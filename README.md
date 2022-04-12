@@ -25,7 +25,7 @@ Here are just a few of the things that **Morning Bot** does well:
  
 ## Configuration
 
-* [Folder Structure/Requirements](#folder-structure/requirements)  
+* [Folder Structure/Requirements](#folder-structure/Requirements)  
 * [Cloning and Installing Dependencies](#cloning-and-installing-dependencies)
 * [Setting Up Twilio](#removing-outliers)
 * [Setting Up Shortcuts](#life-expectancy-analysis)
@@ -36,6 +36,7 @@ Here are just a few of the things that **Morning Bot** does well:
 - Python `3.9.1` or above
 - Linux/MacOS *(Not tested on windows)*
 
+Folder Structure:
 ```
 morningbot
 ├── app
@@ -92,7 +93,15 @@ Create a virtual environment from the `requirements.txt` *(or installed globally
 
 You will need to create a `.env` in the the path `./morningbot/app/` for the os environment variables. It should look something like this:
 
-
-
+```
+TWILIO_ACCOUNT_SID=<account sid>
+TWILIO_AUTH_TOKEN=<auth token>
+TWILIO_NUMBER=<twilio virtual number>
+SENDERS=<sender1,sender2,etc>
+WX_API_KEY=<openweather key>
+TWILIO_NOTIFY_SERVICE_SID=<notify service sid>
+DEFAULT_LOCATION=<your default location>
+```
+Don't worry about the keys yet, we will set those up as we go.
 
 
