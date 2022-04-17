@@ -1,18 +1,20 @@
+from typing import List
 from pyowm import OWM
 from dotenv import load_dotenv
+import os
 
-from app.docs import WeatherApi
+from app.docs import inbound_location, coordinates
 
 load_dotenv()
 
 
 class Weather:
-    def __init__(self, metric_temp=None, metric_wind=None) -> None:
-        self.manager = OWM(WeatherApi.WX_API_KEY).weather_manager()
-        self.location = WeatherApi.WX_LOCATION
-        self.coordinates = WeatherApi.WX_COORDINATES
-        self.metric_temp = metric_temp or WeatherApi.WX_METRIC_TEMP
-        self.metric_wind = metric_wind or WeatherApi.WX_METRIC_WIND
+    def __init__(self, location: str, metric_temp=None, metric_wind=None) -> None:
+        self.manager = OWM(os.environ["WX_API_KEY"]).weather_manager()
+        self.location = inbound_location(location)
+        self.coordinates = coordinates(location)
+        self.metric_temp = metric_temp or os.environ.get("WX_METRIC_TEMP", "fahrenheit")
+        self.metric_wind = metric_wind or os.environ.get("WX_METRIC_WIND", "miles_hour")
         self.onecall = self.manager.one_call(self.coordinates[0], self.coordinates[1])
 
     def get_weather_data(self, weather) -> dict:
@@ -27,12 +29,7 @@ class Weather:
             "detailed_status": weather.detailed_status,
         }
 
-
-class CurrentWeather(Weather):
-    def __init__(self) -> None:
-        super().__init__()
-
-    def current(self, get_data=None, location=None) -> dict:
+    def weather_dict(self, get_data=None, location=None) -> dict:
         """
         Get current weather data for a location.
         Using location or default to add optional location parameter.
@@ -45,12 +42,9 @@ class CurrentWeather(Weather):
         ] = f"{observation.location.name} {observation.location.country}"
 
         for key, val in result.items():
-            if val is None:
+            if type(val) is float:
+                result[key] = int(val)
+            elif val is None:
                 raise Exception(f"Error: {key} is None")
 
         return result
-
-
-if __name__ == "__main__":
-    weather = CurrentWeather()
-    print(weather.current(weather.get_weather_data))

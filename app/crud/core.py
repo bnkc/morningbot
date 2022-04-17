@@ -1,16 +1,14 @@
-from .helper import format_data
+from app.weather import Weather
 
 
 class Message:
-    def __init__(self, weather=None) -> None:
-        self.data: dict = weather
+    def __init__(self, location: str) -> None:
+        self.data: dict = Weather(location).weather_dict(
+            Weather(location).get_weather_data
+        )
         self.feels_like: float = self.data["feels like"]
         self.wind: float = self.data["wind"]
         self.status: str = self.data["detailed_status"]
-
-    @classmethod
-    def from_current(cls):
-        return cls(format_data())
 
     def temp_set_rules(self) -> str:
         feels_like = self.feels_like
@@ -38,6 +36,6 @@ class Message:
             raise Exception("Error: out of range")
         return wind_status
 
-    def create_message(self) -> str:
+    def create_msg(self) -> str:
         message = f"Good morning! Today it will be {self.temp_set_rules()} with {self.status}, feeling like {self.data['feels like']}°F. The High of the day is {self.data['max']}°F and the Low at {self.data['min']}°F. It might be {self.wind_set_rules()} with wind speeds of {self.data['wind']}mph in {self.data['location']}."
         return message
