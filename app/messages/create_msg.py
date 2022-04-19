@@ -1,10 +1,10 @@
-from app.weather import Weather
+from app.crud import Weather
 
 
 class Message:
     def __init__(self, location: str) -> None:
-        self.data: dict = Weather(location).weather_dict(
-            Weather(location).get_weather_data
+        self.data: dict = Weather(location).get_weather_by_location(
+            Weather(location).get_weather
         )
         self.feels_like: float = self.data["feels like"]
         self.wind: float = self.data["wind"]
