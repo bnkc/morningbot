@@ -1,7 +1,7 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 
-from app.crud import Message
+from app.messages import Message
 
 
 app = Flask(__name__)

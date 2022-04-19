@@ -1,1 +1,2 @@
-from .weather import TestData
+from .config import ConfigWeather, WeatherData
+from .sample_data import DemoUser
