@@ -10,6 +10,7 @@ class DemoUser:
             "feels like": 45.29,
             "wind": None,
             "detailed_status": "Clear sky",
+            "uv": 4,
             "location": "London, GB",
         }
 
@@ -21,5 +22,6 @@ class DemoUser:
             "feels like": 45.29,
             "wind": 34.5,
             "detailed_status": "Clear sky",
+            "uv": 4,
             "location": "London, GB",
         }
