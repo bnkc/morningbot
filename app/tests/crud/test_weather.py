@@ -15,6 +15,7 @@ def test_types():
     assert isinstance(weather_["feels like"], int)
     assert isinstance(weather_["wind"], int)
     assert isinstance(weather_["detailed_status"], str)
+    assert isinstance(weather_["uv"], int)
     assert isinstance(weather_["location"], str)
 
 

@@ -26,3 +26,4 @@ class WeatherData:
     feels_like_temp: float
     wind_speed: float
     detailed_status: str
+    uv_index: float

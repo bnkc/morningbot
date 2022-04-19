@@ -29,6 +29,7 @@ class Weather:
             feels_like_temp=weather["feels_like_morn"],
             wind_speed=wind["speed"],
             detailed_status=self.one_call.detailed_status,
+            uv_index=self.one_call.uvi,
         )
 
         return {
@@ -38,6 +39,7 @@ class Weather:
             "feels like": temp.feels_like_temp,
             "wind": temp.wind_speed,
             "detailed_status": temp.detailed_status,
+            "uv": temp.uv_index,
         }
 
     def get_weather_by_location(self, get_data=None) -> dict:
