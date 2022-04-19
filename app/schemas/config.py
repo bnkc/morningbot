@@ -21,7 +21,6 @@ class WeatherData:
     """
 
     max_temp: float
-    day_temp: float
     min_temp: float
     feels_like_temp: float
     wind_speed: float
