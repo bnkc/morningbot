@@ -14,7 +14,7 @@ class Message:
         self.location: str = self.data["location"]
 
     @classmethod
-    def get_message(cls, location: str) -> Optional[dict]:
+    def get_msg(cls, location: str) -> Optional[dict]:
         data = Weather(location).get_weather_by_location(Weather(location).get_weather)
         return data
 
@@ -23,6 +23,12 @@ class Message:
         message = "Sorry, I couldn't find that location. Please try again."
         return message
 
+    @classmethod
+    def daily_limit_msg(cls) -> str:
+        message = "Sorry, you've reached your daily limit. Please try again tomorrow."
+        return message
+
+    @classmethod
     def welcome_msg(self) -> str:
         message = (
             "Welcome to Morning Bot! 🤖\n\n"
