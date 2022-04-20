@@ -3,6 +3,8 @@ from dataclasses import dataclass
 
 from pyowm import OWM
 
+from twilio.rest import Client
+
 
 class ConfigWeather:
     """
@@ -21,7 +23,6 @@ class WeatherData:
     """
 
     max_temp: float
-    day_temp: float
     min_temp: float
     feels_like_temp: float
     wind_speed: float

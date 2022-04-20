@@ -1,1 +1,1 @@
-from .create_msg import Message
+from .message import Message

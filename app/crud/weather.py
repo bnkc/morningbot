@@ -24,7 +24,6 @@ class Weather:
 
         temp = WeatherData(
             max_temp=weather["max"],
-            day_temp=weather["day"],
             min_temp=weather["min"],
             feels_like_temp=weather["feels_like_morn"],
             wind_speed=wind["speed"],
@@ -33,13 +32,12 @@ class Weather:
         )
 
         return {
-            "max": temp.max_temp,
-            "day": temp.day_temp,
-            "min": temp.min_temp,
+            "max temp": temp.max_temp,
+            "min temp": temp.min_temp,
             "feels like": temp.feels_like_temp,
-            "wind": temp.wind_speed,
+            "wind speed": temp.wind_speed,
             "detailed_status": temp.detailed_status,
-            "uv": temp.uv_index,
+            "uv index": temp.uv_index,
         }
 
     def get_weather_by_location(self, get_data=None) -> dict:

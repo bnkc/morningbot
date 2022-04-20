@@ -5,7 +5,6 @@ class DemoUser:
     def user_1(self) -> dict:
         return {
             "max": 40.3,
-            "day": 40.6,
             "min": 40.6,
             "feels like": 45.29,
             "wind": None,
@@ -17,7 +16,6 @@ class DemoUser:
     def user_2(self) -> dict:
         return {
             "max": 40.3,
-            "day": 40.6,
             "min": 40.6,
             "feels like": 45.29,
             "wind": 34.5,

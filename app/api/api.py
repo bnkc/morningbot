@@ -1,6 +1,8 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 
+
+from app.crud import is_body_valid
 from app.messages import Message
 
 
@@ -9,9 +11,16 @@ app = Flask(__name__)
 
 @app.route("/sms", methods=["POST"])
 def sms():
-    msg = Message(request.form["Body"])
+
+    status = is_body_valid(request.form["Body"])
     resp = MessagingResponse()
-    resp.message(msg.create_msg())
+    if not status:
+        error_msg = Message.error_msg()
+        resp.message(error_msg)
+    else:
+        inbound_sms = Message.get_message(request.form["Body"])
+        resp.message(Message(inbound_sms).create_msg())
+
     return str(resp)
 
 

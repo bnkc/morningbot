@@ -10,7 +10,6 @@ def test_types():
     """
     weather_ = Weather("London, GB").get_weather_by_location(DemoUser.user_2)
     assert isinstance(weather_["max"], int)
-    assert isinstance(weather_["day"], int)
     assert isinstance(weather_["min"], int)
     assert isinstance(weather_["feels like"], int)
     assert isinstance(weather_["wind"], int)

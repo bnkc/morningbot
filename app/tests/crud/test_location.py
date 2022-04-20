@@ -7,5 +7,5 @@ def test_city_and_coord():
     """
     Tests for IndexError if city is not found.
     """
-    with pytest.raises(ValueError):
-        city_and_coord("this is not a city")
+
+    assert city_and_coord("this is not a city") is None

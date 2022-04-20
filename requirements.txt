@@ -12,7 +12,9 @@ filelock==3.6.0
 Flask==2.1.1
 future==0.18.2
 geocoder==1.38.1
+geographiclib==1.52
 geojson==2.5.0
+geopy==2.2.0
 geotext==0.4.0
 gunicorn==20.1.0
 identify==2.4.12
@@ -39,6 +41,7 @@ pyicloud==1.0.0
 PyJWT==2.3.0
 pyowm==3.3.0
 pyparsing==3.0.7
+pypi-install==0.0.5
 PySocks==1.7.1
 pytest==7.1.1
 python-dotenv==0.20.0
@@ -51,6 +54,8 @@ six==1.16.0
 toml==0.10.2
 tomli==2.0.1
 twilio==7.8.0
+types-requests==2.27.16
+types-urllib3==1.26.11
 typing-extensions==4.1.1
 tzdata==2022.1
 tzlocal==4.2
