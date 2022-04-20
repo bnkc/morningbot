@@ -3,6 +3,8 @@ from dataclasses import dataclass
 
 from pyowm import OWM
 
+from twilio.rest import Client
+
 
 class ConfigWeather:
     """

@@ -1,5 +1,3 @@
-from distutils.log import error
-from ftplib import error_temp
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 
@@ -22,6 +20,7 @@ def sms():
     else:
         inbound_sms = Message.get_message(request.form["Body"])
         resp.message(Message(inbound_sms).create_msg())
+
     return str(resp)
 
 
