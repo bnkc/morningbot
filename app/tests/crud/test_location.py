@@ -1,5 +1,3 @@
-import pytest
-
 from app.crud import city_and_coord
 
 
