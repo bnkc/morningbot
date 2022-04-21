@@ -9,7 +9,7 @@ class Message:
         self.min: int = self.data["min temp"]
         self.feels_like: int = self.data["feels like"]
         self.wind: int = self.data["wind speed"]
-        self.status: str = self.data["detailed_status"]
+        self.status: str = self.data["detailed status"]
         self.uv: int = self.data["uv index"]
         self.location: str = self.data["location"]
 

@@ -19,6 +19,7 @@ class Weather:
         ).forecast_daily[0]
 
     def get_weather(self, weather: dict) -> dict:
+        
         weather = self.one_call.temperature(self.metric_temp)
         wind = self.one_call.wind(self.metric_wind)
 
@@ -30,13 +31,12 @@ class Weather:
             detailed_status=self.one_call.detailed_status,
             uv_index=self.one_call.uvi,
         )
-
         return {
             "max temp": temp.max_temp,
             "min temp": temp.min_temp,
             "feels like": temp.feels_like_temp,
             "wind speed": temp.wind_speed,
-            "detailed_status": temp.detailed_status,
+            "detailed status": temp.detailed_status,
             "uv index": temp.uv_index,
         }
 

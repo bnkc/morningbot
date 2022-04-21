@@ -4,7 +4,12 @@ from .location import city_and_coord
 from app.db import User, db
 
 
-class Requests:
+class CheckUser:
+    """
+    This method adds a user to the database as well as checks if the user has reached the daily limit.
+    It also checks if the user is a new user or if the message body is valid.
+    """
+
     def add_user(number, time):
         user = User(number, time)
         db.session.add(user)
@@ -16,15 +21,15 @@ class Requests:
             return False
         return True
 
-    def is_first_time_user(number_):
-        if User.query.filter_by(number=number_).count() <= 1:
+    def is_first_time_user(number):
+        if User.query.filter_by(number=number).count() <= 1:
             return True
         return False
 
-    def is_daily_limit_reached(number_):
+    def is_daily_limit_reached(number):
         today = datetime.today().date()
         if (
-            User.query.filter(User.number == number_)
+            User.query.filter(User.number == number)
             .filter(User.created_at == today)
             .count()
             > 3

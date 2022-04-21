@@ -4,22 +4,22 @@ class DemoUser:
 
     def user_1(self) -> dict:
         return {
-            "max": 40.3,
-            "min": 40.6,
+            "max temp": 40.3,
+            "min temp": 40.6,
             "feels like": 45.29,
-            "wind": None,
-            "detailed_status": "Clear sky",
-            "uv": 4,
+            "wind speed": None,
+            "detailed status": "Clear sky",
+            "uv index": 4,
             "location": "London, GB",
         }
 
     def user_2(self) -> dict:
         return {
-            "max": 40.3,
-            "min": 40.6,
+            "max temp": 40.3,
+            "min temp": 40.6,
             "feels like": 45.29,
-            "wind": 34.5,
-            "detailed_status": "Clear sky",
-            "uv": 4,
+            "wind speed": 34.5,
+            "detailed status": "Clear sky",
+            "uv index": 4,
             "location": "London, GB",
         }

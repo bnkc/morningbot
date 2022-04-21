@@ -9,12 +9,12 @@ def test_types():
     Test types of weather data
     """
     weather_ = Weather("London, GB").get_weather_by_location(DemoUser.user_2)
-    assert isinstance(weather_["max"], int)
-    assert isinstance(weather_["min"], int)
+    assert isinstance(weather_["max temp"], int)
+    assert isinstance(weather_["min temp"], int)
     assert isinstance(weather_["feels like"], int)
-    assert isinstance(weather_["wind"], int)
-    assert isinstance(weather_["detailed_status"], str)
-    assert isinstance(weather_["uv"], int)
+    assert isinstance(weather_["wind speed"], int)
+    assert isinstance(weather_["detailed status"], str)
+    assert isinstance(weather_["uv index"], int)
     assert isinstance(weather_["location"], str)
 
 
