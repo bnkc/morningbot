@@ -1,5 +1,5 @@
-# from app.db import db, User
+# from app.db import db, IncomingNumbers
 
 
-# db.session.query(User).delete()
+# db.session.query(IncomingNumbers).delete()
 # db.session.commit()

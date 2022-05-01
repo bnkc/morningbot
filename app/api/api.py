@@ -2,8 +2,8 @@ from datetime import datetime
 from flask import request
 from twilio.twiml.messaging_response import MessagingResponse
 
-from app.crud import CheckUser
-from app.messages import Message
+from app.crud import User
+from app.messages import create_custom_msg, DAILY_LIMIT_MSG, ERROR_MSG, WELCOME_MSG
 from app.db import app
 
 
@@ -12,26 +12,29 @@ def sms() -> str:
     """
     Respond to incoming messages with a weather update.
     """
-    created_at = datetime.today().date()
-    msg_body = request.form.get("Body")
+    body = request.form.get("Body")
     inbound_number = request.form.get("From")
-    CheckUser.add_user(inbound_number, created_at)
-    resp = MessagingResponse()
-    if not CheckUser.is_daily_limit_reached(inbound_number):
-        if CheckUser.is_first_time_user(inbound_number):
-            welcome_msg = Message.welcome_msg()
-            resp.message(welcome_msg)
-        if CheckUser.is_body_valid(msg_body):
-            inbound_msg = Message.get_msg(msg_body)
-            resp.message(Message(inbound_msg).create_msg())
-        else:
-            error_msg = Message.error_msg()
-            resp.message(error_msg)
-    else:
-        daily_limit_msg = Message.daily_limit_msg()
-        resp.message(daily_limit_msg)
+    created_at = datetime.today().date()
 
-    return str(resp)
+    User.add_number(inbound_number, created_at)
+
+    resp = MessagingResponse()
+    if User.is_daily_limit_reached(inbound_number):
+        resp.message(DAILY_LIMIT_MSG)
+        return str(resp)
+
+    if User.is_first_time_user(inbound_number):
+        resp.message(WELCOME_MSG)
+        return str(resp)
+
+    if User.is_body_valid(body):
+        create_msg = create_custom_msg(body)
+        resp.message(create_msg)
+        return str(resp)
+
+    else:
+        resp.message(ERROR_MSG)
+        return str(resp)
 
 
 if __name__ == "__main__":
