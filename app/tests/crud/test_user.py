@@ -3,8 +3,10 @@ from app.crud import User
 from app.conftest import added_user, first_time_user, msg
 
 
+user = User()
+
 # def test_add_number(added_user):
-#     user = User()
+
 #     number, created_at = added_user
 #     user.add_number(number, created_at)
 #     assert IncomingNumbers.query.filter_by(number=number) is not None
