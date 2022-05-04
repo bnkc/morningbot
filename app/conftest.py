@@ -7,7 +7,7 @@ import random
 def added_user():
     number = "+1234"
     created_at = dt.today().date()
-    return number, created_at
+    return number
 
 
 @pytest.fixture
