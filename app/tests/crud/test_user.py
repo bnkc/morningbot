@@ -12,7 +12,8 @@ user = User()
 #     assert IncomingNumbers.query.filter_by(number=number) is not None
 
 
-def test_sample_test(added_user):
+def test_add_number(added_user):
+    number, created_at = added_user
     assert True
 
 
