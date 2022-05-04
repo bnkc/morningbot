@@ -1,53 +1,28 @@
-from typing import Optional
 from app.crud import Weather
 
 
-class Message:
-    def __init__(self, data=None) -> None:
-        self.data: dict = data
-        self.max: int = self.data["max temp"]
-        self.min: int = self.data["min temp"]
-        self.feels_like: int = self.data["feels like"]
-        self.wind: int = self.data["wind speed"]
-        self.status: str = self.data["detailed status"]
-        self.uv: int = self.data["uv index"]
-        self.location: str = self.data["location"]
+def create_custom_msg(location: str) -> str:
+    weather = Weather()
+    weather = weather.get_weather_by_location(location)
+    return f"""
+Good mornin' 🌳
+Here's the weather for {weather["location"]}:\n
+🌡️ Max: {weather["max_temp"]}°F
+🌡️ Min: {weather["min_temp"]}°F
+🌡️ Feels like: {weather["feels_like"]}°F
+💨 Wind: {weather["wind_speed"]} mph
+🌬️ Status: {weather["detailed_status"]}
+🌞 UV Index: {weather["uv_index"]}
+    """
 
-    @classmethod
-    def get_msg(cls, location: str) -> Optional[dict]:
-        data = Weather(location).get_weather_by_location(Weather(location).get_weather)
-        return data
 
-    @classmethod
-    def error_msg(cls) -> str:
-        message = "Sorry, I couldn't find that location. Please try again."
-        return message
-
-    @classmethod
-    def daily_limit_msg(cls) -> str:
-        message = "Sorry, you've reached your daily limit. Please try again tomorrow."
-        return message
-
-    @classmethod
-    def welcome_msg(self) -> str:
-        message = (
-            "Welcome to Morning Bot! 🤖\n\n"
-            "This message is generated the first time you use me. "
-            "If you ever get tired of me, just remove your shortcut. "
-            "You can always add me back with the same shortcut.\n\n"
-            "Here is your first weather update!\n"
-        )
-        return message
-
-    def create_msg(self) -> str:
-        message = (
-            f"Good mornin' 🌳\n\n"
-            f"Here's the weather for {self.location}:\n\n"
-            f"🌡️ Max: {self.max}°F\n"
-            f"🌡️ Min: {self.min}°F\n"
-            f"🌡️ Feels like: {self.feels_like}°F\n"
-            f"💨 Wind: {self.wind} mph\n"
-            f"🌬️ Status: {self.status}\n"
-            f"🌞 UV Index: {self.uv}"
-        )
-        return message
+DAILY_LIMIT_MSG = "Sorry, you've reached your daily limit. Please try again tomorrow."
+ERROR_MSG = "Sorry, I couldn't find that location. Please try again."
+WELCOME_MSG = """
+Welcome to Morning Bot! 🤖\n
+This message is generated the first time you use me and verifies your number.
+Tomorrow will be your first weather update!
+If you ever get tired of me, just remove your shortcut. 
+You can always add me back with the same shortcut.\n
+I am currently in beta. If you have any questions, please contact @levostatnigrosh.
+"""
