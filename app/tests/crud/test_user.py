@@ -44,7 +44,3 @@
 
 # def test_is_daily_limit_reached_edge_case(first_time_user):
 #     assert user.is_daily_limit_reached(first_time_user[0]) is False
-
-
-def test_sample_test():
-    assert True
