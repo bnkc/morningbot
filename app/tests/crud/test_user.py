@@ -4,17 +4,6 @@ from app.conftest import added_user, first_time_user, msg
 from datetime import datetime as dt
 
 user = User()
-# def test_add_number(added_user):
-
-#     number, created_at = added_user
-#     user.add_number(number, created_at)
-#     assert IncomingNumbers.query.filter_by(number=number) is not None
-
-
-# def test_add_number():
-#     user = User()
-#     here = user.add_number("1234", dt.today().date())
-#     assert here is not None
 
 
 def test_get_city(msg):
