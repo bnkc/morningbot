@@ -9,74 +9,82 @@
 
 ## What is it?
 
-I live in Ohio, which means the weather is incredibly unpredictable, sort of like Horton Hears a Who! Because of this, checking the weather on a daily basis is a must. Sometimes I forget and step outside in shorts to quickly find myself in ankle-high snow. **Morning Bot** makes sure this doesn't happen. Every morning I receive a text from Morning Bot that gives Cliff notes on what the weather is like. Additionally, Morning Bot is location dependent on your phone. Yes, this means you can travel and still get weather updates on wherever you might find yourself.
+I live in Ohio, which means the weather is incredibly unpredictable. Because of this, checking the weather on a daily basis is a must. **Morning Bot** makes this easy. Every morning I receive a text from Morning Bot that provides Cliff notes on what the weather is like. Additionally, Morning Bot synced up with [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334) meaning you will always get weather updates based on your most current location.
 
 ## Main Features
 Here are just a few of the things that **Morning Bot** does well:
 
 - Hands-off weather updates every morning
-- Easily `configurable` to receive weather updates at your desired time using [**Heroku Scheduler**](https://devcenter.heroku.com/articles/scheduler)
-- Tethered to your phone. Feel free to travel and still get those weather updates as you go. Accomplished using [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334). You may also set a `default` location if you wish to not share your location.
-- Deployed on [**Heroku**](https://dashboard.heroku.com/apps). You don't need to run this locally
+- Easily `configurable` to receive weather updates at your desired time every morning.
+- Tethered to your phone. Feel free to travel and get weather updates for your most current location. Accomplished using [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334). You may also set a `default` location if you wish to not share your location.
 - Weather data collected from [**Open Weather**](https://openweathermap.org/), a reliable RESTful API
-- Morning Bot uses [**Twilio**](https://www.twilio.com/) to be able to `send` and `receive` messages with your **FREE** virtual number created
-- Bulk SMS capabilities. feel free to add your close ones to the callers list
+- Subscribe or unsubscribe for Morning Bot with a click of a button 
 - Most importantly, a badass app
  
 ## Configuration
 
-* [Folder Structure/Requirements](#folder-structure/Requirements)  
-* [Cloning and Installing Dependencies](#cloning-and-installing-dependencies)
-* [Setting Up Twilio](#removing-outliers)
-* [Setting Up Shortcuts](#life-expectancy-analysis)
-* [Hosting on Heroku/Scheduler](#life-expectancy-analysis)
+* [Setting up Shortcuts](#setting-up-shortcuts)
+* [Additional Info](#additional-info)
 
-## Folder Structure/Requirements
 
-- Python `3.9.1` or above
+## Setting up Shortcuts
+
+
+
+Apple Users:
+
+1. Go to the app store and download [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334)
+2. 
+
+
+
+
+## Additional Info
+
+The source code is currently hosted on GitHub at:
+https://github.com/bnkc/morningbot
+
+- Python `3` and above
 - Linux/MacOS *(Not tested on windows)*
 
 Folder Structure:
 ```
 morningbot
+├── Procfile
+├── README.md
 ├── app
-│   ├── app.py
+│   ├── api
+│   │   ├── __init__.py
+│   │   └── api.py
+│   ├── config.py
+│   ├── conftest.py
 │   ├── crud
 │   │   ├── __init__.py
-│   │   ├── core.py
-│   │   └── helper.py
-│   ├── docs
+│   │   ├── crud_user.py
+│   │   └── crud_weather.py
+│   ├── db
 │   │   ├── __init__.py
-│   │   ├── config_twilio.py
-│   │   ├── config_weather.py
-│   │   └── inbound_messages.py
+│   │   ├── database.db
+│   │   └── session.py
+│   ├── messages
+│   │   ├── __init__.py
+│   │   └── message.py
 │   ├── schemas
 │   │   ├── __init__.py
 │   │   └── weather.py
-│   ├── tests
-│   │   ├── crud
-│   │   │   ├── __init__.py
-│   │   │   └── test_core.py
-│   │   ├── docs
-│   │   │   ├── __init__.py
-│   │   │   └── test_inbound_messages.py
-│   │   └── weather
-│   │       ├── __init__.py
-│   │       └── test_weather.py
-│   └── weather
-│       ├── __init__.py
-│       └── weather.py
+│   └── tests
+│       ├── crud
+│       │   ├── __init__.py
+│       │   ├── test_user.py
+│       │   └── test_weather.py
+│       └── data
+│           ├── __init__.py
+│           └── sample_data.py
 ├── images
 │   └── logo.png
-├── README.md
 ├── requirements.txt
 └── runtime.txt
 ```
-
-## Cloning and Installing Dependencies
-
-The source code is currently hosted on GitHub at:
-https://github.com/bnkc/morningbot
 
 To get started, mkdir and cd into where Morning Bot will be stored.
 Run:
@@ -94,14 +102,9 @@ Create a virtual environment from the `requirements.txt` *(or installed globally
 You will need to create a `.env` in the the path `./morningbot/app/` for the os environment variables. It should look something like this:
 
 ```
-TWILIO_ACCOUNT_SID=<account sid>
-TWILIO_AUTH_TOKEN=<auth token>
-TWILIO_NUMBER=<twilio virtual number>
-SENDERS=<sender1,sender2,etc>
 WX_API_KEY=<openweather key>
-TWILIO_NOTIFY_SERVICE_SID=<notify service sid>
-DEFAULT_LOCATION=<your default location>
 ```
-Don't worry about the keys yet, we will set those up as we go.
+You will need to sign up with [**Open Weather**](https://openweathermap.org/), as well as setup your [**Twilio**](https://www.twilio.com/).
+Both of these resources have great documentation.
 
 
