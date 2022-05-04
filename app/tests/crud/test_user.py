@@ -1,15 +1,17 @@
-# from app.db import IncomingNumbers
-# from app.crud import User
-# from app.conftest import added_user, first_time_user, msg
-
-
-# user = User()
+from app.db import IncomingNumbers
+from app.crud import User
+from app.conftest import added_user, first_time_user, msg
 
 
 # def test_add_number(added_user):
+#     user = User()
 #     number, created_at = added_user
 #     user.add_number(number, created_at)
 #     assert IncomingNumbers.query.filter_by(number=number) is not None
+
+
+def test_sample_test():
+    assert True
 
 
 # def test_get_city(msg):
