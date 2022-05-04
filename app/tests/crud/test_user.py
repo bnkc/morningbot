@@ -13,8 +13,8 @@ user = User()
 
 
 def test_add_number(added_user):
-    number = added_user
-    assert number == "+1234"
+
+    assert added_user[0] == "+1234"
 
 
 # def test_get_city(msg):
