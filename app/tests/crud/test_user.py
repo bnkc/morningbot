@@ -10,7 +10,7 @@ from app.conftest import added_user, first_time_user, msg
 #     assert IncomingNumbers.query.filter_by(number=number) is not None
 
 
-def test_sample_test():
+def test_sample_test(added_user):
     assert True
 
 
