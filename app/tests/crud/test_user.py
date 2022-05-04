@@ -1,10 +1,9 @@
 from app.db import IncomingNumbers
 from app.crud import User
 from app.conftest import added_user, first_time_user, msg
-
+from datetime import datetime as dt
 
 user = User()
-
 # def test_add_number(added_user):
 
 #     number, created_at = added_user
@@ -12,15 +11,16 @@ user = User()
 #     assert IncomingNumbers.query.filter_by(number=number) is not None
 
 
-def test_add_number(added_user):
+# def test_add_number():
+#     user = User()
+#     here = user.add_number("1234", dt.today().date())
+#     assert here is not None
 
-    assert added_user[0] == "+1234"
 
-
-# def test_get_city(msg):
-#     valid_msg, invalid_msg = msg
-#     assert user.get_city(valid_msg) == "Knoxville"
-#     assert user.get_city(invalid_msg) is None
+def test_get_city(msg):
+    valid_msg, invalid_msg = msg
+    assert user.get_city(valid_msg) == "Knoxville"
+    assert user.get_city(invalid_msg) is None
 
 
 # def test_get_coords(msg):
