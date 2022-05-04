@@ -1,27 +1,17 @@
-import pytest
+# import pytest
+# from dataclasses import asdict
 
-from app.crud import Weather
-from app.schemas import DemoUser
-
-
-def test_types():
-    """
-    Test types of weather data
-    """
-    weather_ = Weather("London, GB").get_weather_by_location(DemoUser.user_2)
-    assert isinstance(weather_["max temp"], int)
-    assert isinstance(weather_["min temp"], int)
-    assert isinstance(weather_["feels like"], int)
-    assert isinstance(weather_["wind speed"], int)
-    assert isinstance(weather_["detailed status"], str)
-    assert isinstance(weather_["uv index"], int)
-    assert isinstance(weather_["location"], str)
+# from app.crud import Weather
+# from app.tests.data import user_1, user_2, user_3
 
 
-def test_get_weather_by_location_raises():
-    """
-    Tests for exception if NoneType in dict
-    """
-    weather_ = Weather("London, GB")
-    with pytest.raises(Exception):
-        weather_.get_weather_by_location(DemoUser.user_1)
+# def test_check_weather_data():
+#     weather = Weather()
+#     assert weather.check_weather_data(user_1()) is True
+#     assert weather.check_weather_data(user_2()) is False
+
+
+# def test_coerce_floats():
+#     weather = Weather()
+#     with pytest.raises(Exception):
+#         weather.coerce_floats(asdict(user_3()))
