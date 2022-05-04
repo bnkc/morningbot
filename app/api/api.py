@@ -1,5 +1,4 @@
 from datetime import datetime as dt
-import json
 
 from flask import request
 from twilio.twiml.messaging_response import MessagingResponse

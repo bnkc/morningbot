@@ -1,7 +1,6 @@
-from app.db import IncomingNumbers
 from app.crud import User
 from app.conftest import added_user, first_time_user, msg
-from datetime import datetime as dt
+
 
 user = User()
 
