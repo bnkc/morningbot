@@ -11,6 +11,9 @@ def city_and_coord(message: str) -> Optional[Tuple[str, List[float]]]:
     try:
         city = GeoText(message).cities[0]
         coordinates = geocoder.osm(message).latlng
-        return city , coordinates
+        return city, coordinates
     except IndexError:
         return None
+
+
+# sdfsdfs
