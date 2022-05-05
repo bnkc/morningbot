@@ -18,7 +18,11 @@ def first_time_user():
 
 
 @pytest.fixture
-def msg():
-    valid_msg = "Knoxville TN United States"
-    invalid_msg = "This is not a city"
-    return valid_msg, invalid_msg
+def valid_msg():
+    msg = "Knoxville TN United States"
+    return msg
+
+@pytest.fixture
+def invalid_msg():
+    msg = "This is not a city"
+    return msg

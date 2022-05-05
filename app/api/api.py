@@ -19,6 +19,7 @@ def sms() -> str:
 
     user = User()
     user.add_number(inbound_number, created_at)
+    weather_update = create_custom_msg(body)
 
     resp = MessagingResponse()
     if user.is_daily_limit_reached(inbound_number):
@@ -27,15 +28,18 @@ def sms() -> str:
 
     if user.is_first_time_user(inbound_number):
         resp.message(WELCOME_MSG)
+        resp.message(weather_update)
         return str(resp)
 
-    if user.is_body_valid(body):
-        resp.message(create_custom_msg(body))
-        return str(resp)
+    resp.message(weather_update)
+    return str(resp)
 
-    else:
-        resp.message(ERROR_MSG)
-        return str(resp)
+
+@app.errorhandler(Exception)
+def handle_exception(error: Exception) -> str:
+    resp = MessagingResponse()
+    resp.message(ERROR_MSG)
+    return str(resp)
 
 
 if __name__ == "__main__":

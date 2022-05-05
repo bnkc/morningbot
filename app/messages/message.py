@@ -19,10 +19,7 @@ Here's the weather for {weather["location"]}:\n
 DAILY_LIMIT_MSG = "Sorry, you've reached your daily limit. Please try again tomorrow."
 ERROR_MSG = "Sorry, I couldn't find that location. Please try again."
 WELCOME_MSG = """
-Welcome to Morning Bot! 🤖\n
-This message is generated the first time you use me and verifies your number.
-Tomorrow will be your first weather update!
-If you ever get tired of me, just remove your shortcut. 
-You can always add me back with the same shortcut.\n
-I am currently in beta. If you have any questions, please contact @levostatnigrosh.
+Welcome to Morning Bot! 👾\n
+I am currently in beta. If you have any questions or ideas please reach out to @levostatnigrosh. \n
+Here's your first weather update!
 """

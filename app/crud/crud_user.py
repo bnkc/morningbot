@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List
 from datetime import datetime as dt
 
 import geocoder
@@ -17,16 +17,18 @@ class User:
         db.session.commit()
         return user
 
-    def get_city(self, message: str) -> Optional[str]:
-        city = GeoText(message).cities
-        return city[0] if city else None
+    def get_city(self, message: str) -> str:
+        if GeoText(message).cities:
+            return GeoText(message).cities[0]
+        else:
+            raise ValueError("Invalid location")
 
-    def get_coords(self, message: str) -> Optional[List[float]]:
+    def get_coords(self, message: str) -> List[float]:
         coordinates = geocoder.osm(message).latlng
-        return coordinates if coordinates else None
-
-    def is_body_valid(self, body: str) -> bool:
-        return True if self.get_city(body) and self.get_coords(body) else False
+        if coordinates:
+            return coordinates
+        else:
+            raise ValueError("Invalid location")
 
     def is_first_time_user(self, number: str) -> bool:
         if IncomingNumbers.query.filter_by(number=number).count() <= 1:
