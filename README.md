@@ -29,13 +29,21 @@ Here are just a few of the things that **Morning Bot** does well:
 
 ## Setting up Shortcuts
 
-
+<p align="center">
+  <a href="https://apps.apple.com/us/app/shortcuts/id915249334"><img alt="Morning Bot" src="https://github.com/bnkc/morningbot/blob/master/images/shortcuts.png" width="30%"></a>
+</p>
 
 Apple Users:
 
 1. Go to the app store and download [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334)
-2. 
+2. Next, on the botton of the screen hit `Automation`->`Create Personal Automation`->`Time Of Day`
+3. Select what time of the day you would like to recieve your message *(preferably in the morning)* and hit next.
+4. Now, select `Add Action`->`Location`->`Get Current Location`.
+5. Finally, click `Send Message`->`Recipients` and add the following number: `+16615830427`. Make sure to hit `Don't ask before running` and hit `Done`
 
+That's it, you're all done! if you ever want to unsubscribe from the service, just delete this automation task.
+
+I have also uploaded a short clip of the installation [**HERE**](https://www.youtube.com/shorts/ETcyUGUhfoQ) in case you need additional help.
 
 
 
