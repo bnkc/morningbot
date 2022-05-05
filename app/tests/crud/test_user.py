@@ -28,11 +28,11 @@ def test_is_first_time_user(first_time_user):
 
 
 def test_is_first_time_user_edge_case(added_user):
-    assert user.is_first_time_user(added_user[0]) is False
+    assert user.is_first_time_user(added_user[0]) is True
 
 
 def test_is_daily_limit_reached(added_user):
-    assert user.is_daily_limit_reached(added_user[0]) is True
+    assert user.is_daily_limit_reached(added_user[0]) is False
 
 
 def test_is_daily_limit_reached_edge_case(first_time_user):
