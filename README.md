@@ -9,7 +9,7 @@
 
 ## What is it?
 
-I live in Ohio, which means the weather is incredibly unpredictable. Because of this, checking the weather on a daily basis is a must. **Morning Bot** makes this easy. Every morning I receive a text from Morning Bot that provides Cliff notes on what the weather is like. Additionally, Morning Bot synced up with [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334) meaning you will always get weather updates based on your most current location.
+I live in Ohio, which means the weather is incredibly unpredictable. Because of this, checking the weather on a daily basis is a must. **Morning Bot** makes this easy. Every morning I receive a text from Morning Bot that provides Cliff notes on what the weather is like. Additionally, Morning Bot is synced with [**Shortcuts**](https://apps.apple.com/us/app/shortcuts/id915249334) meaning you will always get weather updates based on your most current location.
 
 ## Main Features
 Here are just a few of the things that **Morning Bot** does well:
