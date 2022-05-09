@@ -31,18 +31,14 @@ class User:
             raise ValueError("Invalid location")
 
     def is_first_time_user(self, number: str) -> bool:
-        if IncomingNumbers.query.filter_by(number=number).count() <= 1:
-            return True
-        return False
+        return IncomingNumbers.query.filter_by(number=number).count() <= 1
 
     def is_daily_limit_reached(self, number: str) -> bool:
         MAX_INTERACTIONS = 3
         today = dt.today().date()
-        if (
+        return (
             IncomingNumbers.query.filter(IncomingNumbers.number == number)
             .filter(IncomingNumbers.created_at == today)
             .count()
             > MAX_INTERACTIONS
-        ):
-            return True
-        return False
+        )
