@@ -65,3 +65,8 @@ def coerce_floats(result: dict[str, float | str]) -> dict[str, int | str]:
         elif value is None:
             raise Exception(f"Error: {key} is None")
     return result
+
+
+# if __name__ == "__main__":
+#     weather = Weather()
+#     print(weather.get_weather_by_location("Newport USA"))
