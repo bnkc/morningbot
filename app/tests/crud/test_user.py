@@ -11,6 +11,12 @@ def test_get_city(valid_msg, invalid_msg):
         user.get_city(invalid_msg)
 
 
+def test_get_country_code(valid_msg, invalid_msg):
+    assert user.get_country_code(valid_msg) == "US"
+    with pytest.raises(ValueError):
+        user.get_country_code(invalid_msg)
+
+
 def test_get_coords(valid_msg, invalid_msg):
     assert user.get_coords(valid_msg) == [35.9603948, -83.9210261]
     with pytest.raises(ValueError):

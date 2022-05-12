@@ -1,6 +1,7 @@
 from typing import List
 from datetime import datetime as dt
 
+import pycountry
 import geocoder
 from geotext import GeoText
 
@@ -20,6 +21,13 @@ class User:
     def get_city(self, message: str) -> str:
         if GeoText(message).cities:
             return GeoText(message).cities[0]
+        else:
+            raise ValueError("Invalid location")
+
+    def get_country_code(self, message: str) -> str:
+        country = GeoText(message).countries
+        if country:
+            return pycountry.countries.get(name=country[0]).alpha_2
         else:
             raise ValueError("Invalid location")
 

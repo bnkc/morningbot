@@ -1,4 +1,4 @@
-from session import db, IncomingNumbers
+# from session import db, IncomingNumbers
 
 
-db.create_all()
+# db.create_all()

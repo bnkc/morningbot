@@ -45,7 +45,8 @@ class Weather:
         Get current weather data for a location
         """
         city: Optional[str] = self.user.get_city(location)
-        observation = self.manager.weather_at_place(city)
+        country_code: Optional[str] = self.user.get_country_code(location)
+        observation = self.manager.weather_at_place(city + "," + country_code)
         weather = observation.weather
         result = self.get_weather(weather, location)
         result[
@@ -65,8 +66,3 @@ def coerce_floats(result: dict[str, float | str]) -> dict[str, int | str]:
         elif value is None:
             raise Exception(f"Error: {key} is None")
     return result
-
-
-# if __name__ == "__main__":
-#     weather = Weather()
-#     print(weather.get_weather_by_location("Newport USA"))
