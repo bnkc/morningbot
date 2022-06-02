@@ -1,8 +1,3 @@
-from typing import List, Optional
-from dataclasses import asdict
-from dotenv import load_dotenv
-
-load_dotenv()
 from pyowm import OWM
 
 from app.config import Config
@@ -17,9 +12,7 @@ class Weather:
         self.metric_wind: str = Config.metric_wind
         self.user = User()
 
-    def get_weather(
-        self, weather: dict[str, str], location: str
-    ) -> dict[str, float | str]:
+    def get_weather(self, weather: dict[str, str], location: str) -> WeatherData:
         """
         Return a dictionary of weather data.
         """
@@ -31,6 +24,7 @@ class Weather:
         wind = one_call.wind(self.metric_wind)
 
         temp = WeatherData(
+            location=location,
             max_temp=weather["max"],
             min_temp=weather["min"],
             feels_like=weather["feels_like_morn"],
@@ -38,31 +32,13 @@ class Weather:
             detailed_status=one_call.detailed_status,
             uv_index=one_call.uvi,
         )
-        return asdict(temp)
+        return temp
 
-    def get_weather_by_location(self, location: str) -> dict[str, int | str]:
+    def get_weather_by_location(self, location: str) -> WeatherData:
         """
         Get current weather data for a location
         """
-        city: Optional[str] = self.user.get_city(location)
-        country_code: Optional[str] = self.user.get_country_code(location)
-        observation = self.manager.weather_at_place(city + "," + country_code)
-        weather = observation.weather
-        result = self.get_weather(weather, location)
-        result[
-            "location"
-        ] = f"{observation.location.name} {observation.location.country}"
-
-        return coerce_floats(result)
-
-
-def coerce_floats(result: dict[str, float | str]) -> dict[str, int | str]:
-    """
-    Coerce all float data to ints.
-    """
-    for key, value in result.items():
-        if isinstance(value, float):
-            result[key] = int(value)
-        elif value is None:
-            raise Exception(f"Error: {key} is None")
-    return result
+        coords = self.user.get_coords(location)
+        observation = self.manager.weather_at_coords(coords[0], coords[1])
+        result = self.get_weather(observation.weather, location)
+        return result

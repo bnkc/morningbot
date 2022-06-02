@@ -1,16 +1,14 @@
 from typing import List
 from datetime import datetime as dt
 
-import pycountry
-import geocoder
-from geotext import GeoText
 
 from app.db import IncomingNumbers, db
+from app.config import Config
 
 
 class User:
     def __init__(self) -> None:
-        pass
+        self.gmaps = Config.gmaps
 
     def add_number(self, number: str, time: dt) -> None:
         user = IncomingNumbers(number, time)
@@ -18,23 +16,19 @@ class User:
         db.session.commit()
         return user
 
-    def get_city(self, message: str) -> str:
-        if GeoText(message).cities:
-            return GeoText(message).cities[0]
-        else:
-            raise ValueError("Invalid location")
-
-    def get_country_code(self, message: str) -> str:
-        country = GeoText(message).countries
-        if country:
-            return pycountry.countries.get(name=country[0]).alpha_2
+    def get_area(self, message: str) -> str:
+        geo_result = self.gmaps.geocode(message)
+        if geo_result:
+            return geo_result[0]["address_components"][2]["long_name"]
         else:
             raise ValueError("Invalid location")
 
     def get_coords(self, message: str) -> List[float]:
-        coordinates = geocoder.osm(message).latlng
-        if coordinates:
-            return coordinates
+        geo_result = self.gmaps.geocode(message)
+        if geo_result:
+            lat = geo_result[0]["geometry"]["location"]["lat"]
+            lng = geo_result[0]["geometry"]["location"]["lng"]
+            return [lat, lng]
         else:
             raise ValueError("Invalid location")
 
@@ -42,7 +36,7 @@ class User:
         return IncomingNumbers.query.filter_by(number=number).count() <= 1
 
     def is_daily_limit_reached(self, number: str) -> bool:
-        MAX_INTERACTIONS = 3
+        MAX_INTERACTIONS = 3  ###FIXME: Hardcoded value
         today = dt.today().date()
         return (
             IncomingNumbers.query.filter(IncomingNumbers.number == number)

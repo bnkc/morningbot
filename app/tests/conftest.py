@@ -1,6 +1,32 @@
+import pytest
 from datetime import datetime as dt
 import pytest
 import random
+
+
+from app.api import sms
+
+
+@pytest.fixture()
+def app():
+    app = sms()
+    app.config.update(
+        {
+            "TESTING": True,
+        }
+    )
+
+    yield app
+
+
+@pytest.fixture()
+def client(app):
+    return app.test_client()
+
+
+# @pytest.fixture()
+# def runner(app):
+#     return app.test_cli_runner()
 
 
 @pytest.fixture
@@ -19,8 +45,9 @@ def first_time_user():
 
 @pytest.fixture
 def valid_msg():
-    msg = "Knoxville TN United States"
+    msg = "South Shady Street Lancaster, NY 14086"
     return msg
+
 
 @pytest.fixture
 def invalid_msg():

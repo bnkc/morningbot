@@ -1,15 +1,15 @@
-from dataclasses import dataclass
+from pydantic import BaseModel
 
 
-@dataclass
-class WeatherData:
+class WeatherData(BaseModel):
     """
     Class to check weather data types
     """
 
-    max_temp: float
-    min_temp: float
-    feels_like: float
-    wind_speed: float
+    location: str
+    max_temp: int
+    min_temp: int
+    feels_like: int
+    wind_speed: int
     detailed_status: str
-    uv_index: float
+    uv_index: int

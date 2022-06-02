@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 from app.schemas import WeatherData
 
 
