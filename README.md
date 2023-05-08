@@ -5,7 +5,7 @@
 
 ![PyPI pyversions](https://img.shields.io/pypi/pyversions/deadlink.svg?style=flat-square)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
-![gh-actions](https://img.shields.io/github/workflow/status/nschloe/deadlink/ci?style=flat-square)
+
 
 ## What is it?
 
